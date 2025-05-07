@@ -7,18 +7,29 @@ print(result)
 
 # Exercise 2 : Cinemax 2
 family = {}
+total_price = 0
+
+print('Welcome to the family ticket price calculator!')
+print('To exit the program, type "quit" when prompted for your name.')
+
 while True:
-    key = input('Enter your name: ')
-    if key.lower() == 'quit' :
-        break
-    value = int(input('Enter your age : '))
-    family[key] = value
-    if value < 3:
-        print('Your ticket is free')
-    elif 3 <= value <= 12:
-        print('Your ticket is 10$')
-    elif value > 12:
-        print('Your ticket is 15$')
-        
+
+    name = input('Enter your name: ')
+    if name.lower() == 'quit':
+        print('Exiting the program...')
+        break    
+    age = int(input('Enter your age: '))
+    family[name] = age
+    if age < 3:
+        price = 0
+    elif 3 <= age <= 12:
+        price = 10
+    else:
+        price = 15
+    total_price += price
+
+    print(f"{name}, your ticket price is ${price}.")
+    print(f"The total price ${total_price}")
     
-    
+#  Exercise 3: Zara
+
