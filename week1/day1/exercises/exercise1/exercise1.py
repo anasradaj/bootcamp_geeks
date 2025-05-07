@@ -1,5 +1,5 @@
 # exercise 1 : Hello World
-print("Hello World "* 4)
+print("Hello World\n"* 4)
 
 # Exercise 2 : Some Math
 calcul=int(99**3)*8
