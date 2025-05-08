@@ -112,19 +112,19 @@ make_shirt(text= "learning paython.", size= "extra small")
 import random
 
 def get_random_temp():
-        if season.lower() == 'winter':
+    if season.lower() == 'winter':
         lower_limit = -10  
         upper_limit = 16
-        elif season.lower() in 'autumn':
+    elif season.lower() in 'autumn':
         lower_limit = 15
         upper_limit = 28
-        elif season.lower() == 'spring':
+    elif season.lower() == 'spring':
         lower_limit = 18
         upper_limit = 30
-        elif season.lower() == 'summer':
+    elif season.lower() == 'summer':
         lower_limit = 25
         upper_limit = 40
-        else:
+    else:
         print("Invalid season entered.")
             return None
 
@@ -151,9 +151,7 @@ def main():
         temperature = get_random_temp(user_season)
         if temperature is not None:
             print(f"The random temperature for {user_season} is: {temperature:.2f}°C")
-        
-    
-        
+           
     elif user_input == 'month':
         month = int(input("Enter the month (1-12): "))
         season = get_season(month)
