@@ -108,4 +108,64 @@
 # make_shirt(text= "learning paython.", size= "extra small")
 
 
+# Exercise 7 : Temperature Advice
+import random
+
+def get_random_temp():
+        if season.lower() == 'winter':
+        lower_limit = -10  
+        upper_limit = 16
+        elif season.lower() in 'autumn':
+        lower_limit = 15
+        upper_limit = 28
+        elif season.lower() == 'spring':
+        lower_limit = 18
+        upper_limit = 30
+        elif season.lower() == 'summer':
+        lower_limit = 25
+        upper_limit = 40
+        else:
+        print("Invalid season entered.")
+            return None
+
+    return random.uniform(lower_limit, upper_limit)
+
+def get_season(month):
+        if 1<= month <= 2 or month == 12:
+            return 'winter'
+        elif 3 <= month <= 5:   
+            return 'spring'
+        elif 6 <= month <= 8:
+            return 'summer'
+        elif 9 <= month <= 11:
+            return 'autumn'
+        else:
+        print("Invalid month entered.")
+            return None
+
+def main():
+    user_input = input("Enter 'season' to get a random temperature or 'month' to enter a month: ").lower()
     
+    if user_input == 'season':
+        user_season = input("Enter the season (winter, spring, summer, autumn): ").lower()
+        temperature = get_random_temp(user_season)
+        if temperature is not None:
+            print(f"The random temperature for {user_season} is: {temperature:.2f}°C")
+        
+    
+        
+    elif user_input == 'month':
+        month = int(input("Enter the month (1-12): "))
+        season = get_season(month)
+        if season is not None:
+            temperature = get_random_temp()
+            if temperature is not None:
+                print(f"The random temperature for {season} is: {temperature:.2f}°C")
+    else:
+        print("Invalid input. Please enter 'season' or 'month'.")
+   
+
+main()
+
+    
+
