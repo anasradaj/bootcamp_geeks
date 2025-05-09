@@ -144,7 +144,7 @@ def main():
         elif user_input == "5":
             zoo.get_groups()
         elif user_input == "6":
-            print("Exiting the program,Have a nice day!")
+            print("Exiting the program, Have a nice day!")
             break
         else:
             print("Invalid choice. Please try again.")

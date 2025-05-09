@@ -14,7 +14,7 @@ print('To exit the program, type "quit" when prompted for your name.')
 
 while True:
 
-    name = input('Enter your name: ')
+    name = input('Enter your name or "quit" to exit : ')
     if name.lower() == 'quit':
         print('Exiting the program...')
         break    
@@ -71,7 +71,7 @@ def describe_city(city, country = "Morocco"):
 describe_city("Cassablanca")   
 
 
-Exercise 5 : Random
+# Exercise 5 : Random
 import random
 print("Welcome to the Guess the Number game!")
 
@@ -126,7 +126,7 @@ def get_random_temp():
         upper_limit = 40
     else:
         print("Invalid season entered.")
-            return None
+        return None
 
     return random.uniform(lower_limit, upper_limit)
 
@@ -140,7 +140,7 @@ def get_season(month):
         elif 9 <= month <= 11:
             return 'autumn'
         else:
-        print("Invalid month entered.")
+            print("Invalid month entered.")
             return None
 
 def main():
@@ -152,7 +152,7 @@ def main():
         if temperature is not None:
             print(f"The random temperature for {user_season} is: {temperature:.2f}°C")
            
-    elif user_input == 'month':
+    elif user_input == 'month' :
         month = int(input("Enter the month (1-12): "))
         season = get_season(month)
         if season is not None:
