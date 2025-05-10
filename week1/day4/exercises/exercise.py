@@ -93,12 +93,40 @@ members = [
     {'name': 'Sarah', 'age': 32, 'gender': 'Female', 'is_child': False}
 ]
 
-smith_family = Family(last_name="Smith", members=members)
+# smith_family = Family("Smith", members)
+# smith_family.born(name='Emma', age=0, gender='Female', is_child=True)
+# print(smith_family.is_18('Michael'))  
+# print(smith_family.is_18('Emma'))     
+# smith_family.family_presentation()
+
+# Exercise 5 : TheIncredibles Family
+
+class TheIncredibles(Family):
+    def __init__(self, last_name, members):
+        super().__init__(last_name, members)
+
+    def use_power(self, name):
+        for member in self.members:
+            if member['name'] == name:
+                if self.is_18(name):
+                    print(f"{name}'s power is: {member['power']}")
+                    return
+                else:
+                    raise Exception(f"{name} is not over 18 years old and cannot use their power.")
+        print(f"Member {name} not found in the family.")
+
+    def incredible_presentation(self):
+        print("*Here is our powerful family **")
+        super().family_presentation()
 
 
-smith_family.born(name='Emma', age=0, gender='Female', is_child=True)
+incredible_members = [
+    {'name': 'Michael', 'age': 35, 'gender': 'Male', 'is_child': False, 'power': 'fly', 'incredible_name': 'MikeFly'},
+    {'name': 'Sarah', 'age': 32, 'gender': 'Female', 'is_child': False, 'power': 'read minds', 'incredible_name': 'SuperWoman'}
+]
+incredibles_family = TheIncredibles("Incredibles", incredible_members)
 
-print(smith_family.is_18('Michael'))  # True
-print(smith_family.is_18('Emma'))     # False
 
-smith_family.family_presentation()
+incredibles_family.incredible_presentation()
+incredibles_family.born(name='Jack', age=0, gender='Male', is_child=True, power='Unknown Power', incredible_name='Baby Jack')
+incredibles_family.incredible_presentation()

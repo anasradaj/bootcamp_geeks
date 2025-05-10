@@ -62,7 +62,6 @@ more_on_zara = {
 }
 brand.update(more_on_zara)
 print("The updated brand dictionary is:", brand["number_stores"])
-# the value of the key "number_stores" is 10, because we updated it with the value from more_on_zara dictionary.
 
 # Exercise 4 : Some Geography
 def describe_city(city, country = "Morocco"):
