@@ -15,11 +15,13 @@
 
 --  *creating 2 tables
 -- CREATE TABLE items(
---  item_name VARCHAR PRIMARY KEY,
+--  id SERIAL PRIMARY KEY,
+--  item_name VARCHAR NOT NULL,
 --  item_price MONEY  NOT NULL
 --  )
 -- -- CREATE TABLE customers(
---  first_name VARCHAR PRIMARY KEY,
+--  id SERIAL PRIMARY KEY,
+--  first_name VARCHAR NOT NULL,
 --  last_price MONEY  NOT NULL
 --  )
 -- -- Rename and Change Data type of last_price for customers table :
@@ -60,7 +62,7 @@
 -- SELECT * FROM customers WHERE last_name = 'Jones'
 
 -- -- 3.6) All customers whose firstname is not ‘Scott’
--- SELECT * FROM customers WHERE first_name = 'Scott'
+-- SELECT * FROM customers WHERE first_name != 'Scott'
 
 
 
