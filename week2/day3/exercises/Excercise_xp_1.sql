@@ -78,29 +78,29 @@
 -- --2. Which foreign keys (references) are defined for the customer table? it's 'address_id' from 'address' table
 -- -- How does this affect the way in which we INSERT into the customer table? : 
 -- when inserting a new customer, the value provided for that foreign key column would need to match a valid primary key value in the referenced table.
-SELECT
-    tc.constraint_name,
-    kcu.column_name,
-    ccu.table_name AS referenced_table,
-    ccu.column_name AS referenced_column
-FROM
-    information_schema.table_constraints AS tc
-JOIN
-    information_schema.key_column_usage AS kcu
-        ON tc.constraint_schema = kcu.constraint_schema
-        AND tc.constraint_name = kcu.constraint_name
-        AND tc.table_schema = kcu.table_schema
-        AND tc.table_name = kcu.table_name
-JOIN
-    information_schema.referential_constraints AS rc
-        ON tc.constraint_schema = rc.constraint_schema
-        AND tc.constraint_name = rc.constraint_name
-JOIN
-    information_schema.constraint_column_usage AS ccu
-        ON rc.unique_constraint_schema = ccu.constraint_schema
-        AND rc.unique_constraint_name = ccu.constraint_name
-        AND kcu.ordinal_position = 1
-WHERE tc.table_name = 'customer' AND tc.constraint_type = 'FOREIGN KEY';
+-- SELECT
+--     tc.constraint_name,
+--     kcu.column_name,
+--     ccu.table_name AS referenced_table,
+--     ccu.column_name AS referenced_column
+-- FROM
+--     information_schema.table_constraints AS tc
+-- JOIN
+--     information_schema.key_column_usage AS kcu
+--         ON tc.constraint_schema = kcu.constraint_schema
+--         AND tc.constraint_name = kcu.constraint_name
+--         AND tc.table_schema = kcu.table_schema
+--         AND tc.table_name = kcu.table_name
+-- JOIN
+--     information_schema.referential_constraints AS rc
+--         ON tc.constraint_schema = rc.constraint_schema
+--         AND tc.constraint_name = rc.constraint_name
+-- JOIN
+--     information_schema.constraint_column_usage AS ccu
+--         ON rc.unique_constraint_schema = ccu.constraint_schema
+--         AND rc.unique_constraint_name = ccu.constraint_name
+--         AND kcu.ordinal_position = 1
+-- WHERE tc.table_name = 'customer' AND tc.constraint_type = 'FOREIGN KEY';
 
 -- -- 3. We created a new table called customer_review. Drop this table. Is this an easy step, or does it need extra checking?:  
 -- --Yes, because there isn't other tables with foreign keys referencing customer_review 
