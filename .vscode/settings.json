@@ -18,6 +18,16 @@
             "name": "PostgreSQL 17",
             "database": "public",
             "username": "postgres"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "database": "dvdrental",
+            "username": "postgres",
+            "name": "DVD_rental_connection ",
+            "password": "Anas/1996."
         }
     ]
 }
