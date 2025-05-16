@@ -3,7 +3,7 @@ import psycopg2
 # Database connection details
 DB_NAME = "Restaurant"
 USER = "postgres"
-PASSWORD = "Anas/1996."  # Replace with your PostgreSQL password
+PASSWORD = "Anas/1996."  
 HOST = "localhost"
 
 
@@ -81,4 +81,4 @@ class MenuItem:
         """Updates the menu item's name and/or price in the database."""
         self.item_name = new_name
         self.item_price = new_price
-        return self.save() # Reuses the save method for updating
+        return self.save() 
