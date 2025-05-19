@@ -1,0 +1,53 @@
+body {
+    background: linear-gradient(135deg, #fffbe7 0%, #ffe0e9 100%);
+}
+.menu-header {
+    background: #ffb347;
+    color: #343a40;
+    padding: 1.5rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(255,179,71,0.10);
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #fff3e0;
+}
+.form-inline input[type="text"], .form-inline input[type="number"] {
+    width: 120px;
+    margin-right: 0.5rem;
+}
+.btn-sm {
+    margin-top: 2px;
+}
+.add-form {
+    background: #fffbe7;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(255,179,71,0.07);
+    margin-bottom: 2rem;
+}
+.btn-success, .btn-warning {
+    background: #ffb347;
+    border: none;
+    color: #343a40;
+    font-weight: bold;
+}
+.btn-success:hover, .btn-warning:hover {
+    background: #ff9800;
+    color: #fff;
+}
+.btn-danger {
+    background: #ff5252;
+    border: none;
+}
+.btn-danger:hover {
+    background: #d32f2f;
+}
+.btn-outline-secondary {
+    border-color: #ffb347;
+    color: #ffb347;
+}
+.btn-outline-secondary:hover {
+    background: #ffb347;
+    color: #fff;
+}

@@ -25,11 +25,11 @@ class MenuManager:
         if conn:
             cursor = conn.cursor()
             try:
-                query = "SELECT item_id, item_name, item_price FROM Menu_Items WHERE item_name = %s;"
+                query = "SELECT item_id, item_name, item_price, photo_url, category, description FROM Menu_Items WHERE item_name = %s;"
                 cursor.execute(query, (item_name,))
                 result = cursor.fetchone()
                 if result:
-                    return MenuItem(result[1], result[2], result[0])
+                    return MenuItem(result[1], result[2], result[0], result[3], result[4], result[5])
                 else:
                     return None
             except psycopg2.Error as e:
@@ -49,11 +49,11 @@ class MenuManager:
             cursor = conn.cursor()
             items = []
             try:
-                query = "SELECT item_id, item_name, item_price FROM Menu_Items;"
+                query = "SELECT item_id, item_name, item_price, photo_url, category, description FROM Menu_Items;"
                 cursor.execute(query)
                 results = cursor.fetchall()
                 for row in results:
-                    items.append(MenuItem(row[1], row[2], row[0]))
+                    items.append(MenuItem(row[1], row[2], row[0], row[3], row[4], row[5]))
                 return items
             except psycopg2.Error as e:
                 print(f"Error fetching all items: {e}")

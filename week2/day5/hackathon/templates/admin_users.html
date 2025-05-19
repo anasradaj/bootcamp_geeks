@@ -1,0 +1,112 @@
+<!-- admin_users.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Management - Restaurant Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+    <style>
+        body { background: linear-gradient(120deg, #fffbe6 0%, #ffe0c3 100%); min-height: 100vh; }
+        .admin-header { background: linear-gradient(90deg, #ffb347 0%, #ffecd2 100%); color: #343a40; padding: 2rem 1rem 1rem 1rem; border-radius: 0.5rem; margin-bottom: 2rem; box-shadow: 0 4px 24px 0 rgba(255,179,71,0.15); text-align: center; }
+        .btn-warning, .btn-danger, .btn-primary { transition: transform 0.2s; }
+        .btn-warning:hover, .btn-danger:hover, .btn-primary:hover { transform: scale(1.05); }
+        .table { border-radius: 0.5rem; overflow: hidden; background: #fff8e1; }
+        th { background: #ffb347 !important; color: #343a40 !important; }
+        .user-info { margin-bottom: 1rem; color: #343a40; font-weight: bold; background: #ffecd2; border-radius: 0.5rem; padding: 0.5rem 1rem; display: flex; align-items: center; justify-content: space-between; }
+        .home-btn { margin-bottom: 1rem; }
+        @media (max-width: 768px) { .admin-header { padding: 1rem 0.5rem 0.5rem 0.5rem; } }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: #ffecd2; border-radius: 0.5rem; margin-bottom: 2rem;">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="/">🍽️ Restaurant</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/menu_page">Menu Management</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">Profile</a>
+            </li>
+            {% if session.get('username') == 'admin' %}
+            <li class="nav-item">
+              <a class="nav-link text-warning fw-bold" href="/admin/requests">Admin Management</a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link text-danger" href="/logout">Disconnect</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    {% if session.get('logged_in') %}
+    <div class="user-info mb-3" style="color:#343a40; font-weight:bold; background:#ffecd2; border-radius:0.5rem; padding:0.5rem 1rem; display:flex; align-items:center; justify-content:space-between;">
+        <span>👤 {% if session.get('first_name') and session.get('last_name') %}{{ session['first_name'] }} {{ session['last_name'] }} ({{ session['username'] }}){% else %}{{ session['username'] }}{% endif %}</span>
+    </div>
+    {% endif %}
+    <!-- Admin Management Tabs -->
+    {% if session.get('username') == 'admin' %}
+    <ul class="nav nav-tabs mb-4" id="adminManagementTabs">
+      <li class="nav-item">
+        <a class="nav-link {% if request.path == '/admin/requests' %}active{% endif %}" href="/admin/requests">Account Requests</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if request.path == '/admin/requests/history' %}active{% endif %}" href="/admin/requests/history">Request History</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if request.path == '/admin/users' %}active{% endif %}" href="/admin/users">User Management</a>
+      </li>
+    </ul>
+    {% endif %}
+    <div class="admin-header">
+        <h2>User Management</h2>
+        <p>View and manage all users.</p>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.first_name }}</td>
+                    <td>{{ user.last_name }}</td>
+                    <td>
+                        <form method="post" action="/admin/delete_user" class="d-inline">
+                            <input type="hidden" name="id" value="{{ user.id }}">
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                        <form method="post" action="/admin/reset_password" class="d-inline ms-2">
+                            <input type="hidden" name="id" value="{{ user.id }}">
+                            <button type="submit" class="btn btn-warning btn-sm">Reset Password</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
