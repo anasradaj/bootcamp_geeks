@@ -121,6 +121,7 @@
 // }
 
 // // //exercise 6 
+
 // const details = {
 //   my: 'name',
 //   is: 'Rudolf',
@@ -132,3 +133,11 @@
 //     rudolf += `${key} ${details[key]} `;
 // }
 // console.log(rudolf);
+
+// // Exercise 7 : Secret Group
+
+const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+const sortedNames = names.sort();
+const secretSocietyName = sortedNames.map(name => name[0]).join("");
+
+console.log(secretSocietyName); 
