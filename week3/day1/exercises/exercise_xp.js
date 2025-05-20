@@ -36,6 +36,8 @@
 //  }
 
 
+
+
 // //  Exercise 2 : Your favorite colors
 
 // const colors = ["black", "green", "blue", "white", "red"]
@@ -52,6 +54,8 @@
 //   console.log(`My ${orderNumber}${suffix} choice is ${colors[i]}`);
 // }
 
+
+
 // // exercise 3 :  Repeat the question
 // let question;
 
@@ -61,6 +65,8 @@
 // } while (isNaN(question) || question < 10);
 
 // // console.log("Thank you! The number is:", question);
+
+
 
 // // Exercise 4 : Building Management
 
@@ -95,3 +101,21 @@
 // }
 
 // console.log(danRent);
+
+
+
+// //Exercise 5 : Family
+const family = {
+    father: "Nilson",
+    mother: "Mary",
+    son: "Mike",
+    daughter: "Emily"
+};
+
+for (let key in family) {
+    console.log(key);
+}
+
+for (let key in family) {
+    console.log(family[key]);
+}
