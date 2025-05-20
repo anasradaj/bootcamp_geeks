@@ -29,3 +29,20 @@ if (studentName in guestList) {
 } else {
   console.log("Hi! I'm a guest.");
 }
+
+// Exercise 3
+let age = [20, 5, 12, 43, 98, 55];
+
+let sumAges = 0;
+for (let i = 0; i < age.length; i++) {
+  sumAges += age[i];
+}
+console.log("The sum of all ages is:", sumAges);
+
+let highestAge = age[0];
+for (let i = 1; i < age.length; i++) {
+  if (age[i] > highestAge) {
+    highestAge = age[i];
+  }
+}
+console.log("The highest age is:", highestAge);
