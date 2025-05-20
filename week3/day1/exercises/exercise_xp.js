@@ -104,18 +104,31 @@
 
 
 
-// //Exercise 5 : Family
-const family = {
-    father: "Nilson",
-    mother: "Mary",
-    son: "Mike",
-    daughter: "Emily"
-};
+// // //Exercise 5 : Family
+// const family = {
+//     father: "Nilson",
+//     mother: "Mary",
+//     son: "Mike",
+//     daughter: "Emily"
+// };
 
-for (let key in family) {
-    console.log(key);
-}
+// for (let key in family) {
+//     console.log(key);
+// }
 
-for (let key in family) {
-    console.log(family[key]);
-}
+// for (let key in family) {
+//     console.log(family[key]);
+// }
+
+// // //exercise 6 
+// const details = {
+//   my: 'name',
+//   is: 'Rudolf',
+//   the: 'reindeer'
+// };
+
+// let rudolf = "";
+// for (let key in details) {
+//     rudolf += `${key} ${details[key]} `;
+// }
+// console.log(rudolf);
