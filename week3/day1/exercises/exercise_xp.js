@@ -1,5 +1,5 @@
-// exercise 1 : 
-// Part 1
+// // exercise 1 : 
+// // Part 1
 
 // const people = ["Greg", "Mary", "Devon", "James"];
 
@@ -36,18 +36,29 @@
 //  }
 
 
-//  Exercise 2 : Your favorite colors
+// //  Exercise 2 : Your favorite colors
 
-const colors = ["black", "green", "blue", "white", "red"]
+// const colors = ["black", "green", "blue", "white", "red"]
 
-for (let i = 0 ; i < colors.length; i++) {
-    console.log(`My #${i + 1} choice is ${colors[i]}`);
-}
+// for (let i = 0 ; i < colors.length; i++) {
+//     console.log(`My #${i + 1} choice is ${colors[i]}`);
+// }
 
-const suffixes = ["st", "nd", "rd", "th", "th"];
+// const suffixes = ["st", "nd", "rd", "th", "th"];
 
-for (let i = 0; i < colors.length; i++) {
-  const orderNumber = i + 1;
-  const suffix = suffixes[i];
-  console.log(`My ${orderNumber}${suffix} choice is ${colors[i]}`);
-}
+// for (let i = 0; i < colors.length; i++) {
+//   const orderNumber = i + 1;
+//   const suffix = suffixes[i];
+//   console.log(`My ${orderNumber}${suffix} choice is ${colors[i]}`);
+// }
+
+// // exercise 3 :  Repeat the question
+// let question;
+
+// do {
+//     question = prompt("Please enter a number : ");
+//     question = Number(question); 
+// } while (isNaN(question) || question < 10);
+
+// console.log("Thank you! The number is:", question);
+
