@@ -1,17 +1,16 @@
 // Exercise 1 : Find the numbers divisible by 23
 function displayNumbersDivisible() {
     let sum = 0;
-
     console.log("Numbers divisible by 23:");
-    for (let i = 0 <= 500; i++) {
+    for (let i = 0; i <= 500; i++) {
         if (i % 23 === 0) {
             console.log(i);
             sum += i;
         }
     }
-
     console.log("Sum:", sum);
 }
+
 displayNumbersDivisible()
 
 // Bonus : Find the numbers divisible by a given divisor
