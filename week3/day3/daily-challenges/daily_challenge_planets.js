@@ -1,7 +1,6 @@
 // Daily Challenge: Planets
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Array of planet objects with name, color, and moons
     const planets = [
         { name: 'Mercury', color: 'gray', moons: 0 },
         { name: 'Venus', color: 'khaki', moons: 0 },
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const section = document.querySelector('.listPlanets');
 
     planets.forEach((planet, idx) => {
-        // Create planet div
         const planetDiv = document.createElement('div');
         planetDiv.classList.add('planet');
         planetDiv.style.backgroundColor = planet.color;
@@ -25,11 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
         planetDiv.style.display = 'inline-block';
         planetDiv.style.position = 'relative';
 
-        // Create moons
         for (let i = 0; i < planet.moons; i++) {
             const moon = document.createElement('div');
             moon.classList.add('moon');
-            // Position moons in a circle around the planet
             const angle = (i / planet.moons) * 2 * Math.PI;
             const radius = 60;
             moon.style.left = 50 + radius * Math.cos(angle) + 'px';
