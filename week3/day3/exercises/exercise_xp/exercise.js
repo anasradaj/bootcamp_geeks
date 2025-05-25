@@ -1,4 +1,5 @@
 // // Exercise 1 : Find the numbers divisible by 23
+
 // function displayNumbersDivisible() {
 //     let sum = 0;
 //     console.log("Numbers divisible by 23:");
