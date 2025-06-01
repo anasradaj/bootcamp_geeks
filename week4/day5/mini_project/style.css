@@ -1,0 +1,99 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  color: #0ccac4;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'SEGA LOGO FONT', sans-serif;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.search-container {
+  margin-bottom: 30px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#searchBox {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid #0ccac4;
+  border-radius: 25px;
+  font-size: 1em;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#searchBox::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#searchBox:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(12, 202, 196, 0.3);
+}
+
+.robots-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.robot-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 15px;
+  padding: 20px;
+  width: calc(25% - 30px);
+  min-width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.robot-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(12, 202, 196, 0.2);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.robot-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.robot-card img:hover {
+  transform: scale(1.1);
+}
+
+.robot-card h2 {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: #2d2d2d;
+}
+
+.robot-card p {
+  font-size: 0.9em;
+  color: #666;
+  margin: 5px 0;
+  word-break: break-word;
+}
