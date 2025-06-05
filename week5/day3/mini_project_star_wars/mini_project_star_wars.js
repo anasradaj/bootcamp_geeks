@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const homeWorldEl = document.getElementById('home-world');
 
     async function getCharacterData() {
+        btn.disabled = true; 
         errorDiv.classList.add('hidden');
         card.classList.add('hidden');
         loading.classList.remove('hidden');
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             errorDiv.classList.remove('hidden');
         } finally {
             loading.classList.add('hidden');
+            btn.disabled = false; 
         }
     }
 
