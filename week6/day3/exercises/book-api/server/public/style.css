@@ -1,0 +1,140 @@
+body {
+  background: linear-gradient(120deg, #fff, #e0e0e0 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 480px;
+  width: 100%;
+  animation: fadeIn 1s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  font-size: 2.2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+}
+
+input[type="text"], input[type="number"] {
+  border: 2px solid #e0e0e0;
+  border-radius: 1rem;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  background: #f7f7f7;
+  color: #222;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+input[type="text"]:focus, input[type="number"]:focus {
+  border-color: #222;
+  box-shadow: 0 0 0 2px #2222;
+}
+
+button {
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  outline: none;
+}
+button:hover, button:focus {
+  background: #444;
+  color: #fff;
+  transform: scale(1.04);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+button:active {
+  transform: scale(0.98);
+}
+
+#books {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.book {
+  background: #f7f7f7;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1.2rem 1rem 1rem 1rem;
+  position: relative;
+  animation: popIn 0.5s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes popIn {
+  0% { transform: scale(0.8) rotate(-6deg); opacity: 0; }
+  80% { transform: scale(1.08) rotate(4deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0); }
+}
+
+.book-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+.book-meta {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 0.7rem;
+}
+.book-actions {
+  display: flex;
+  gap: 0.7rem;
+}
+.book-actions button {
+  background: #fff;
+  color: #222;
+  border: 2px solid #222;
+  font-size: 0.95rem;
+  padding: 0.4rem 1rem;
+  border-radius: 0.8rem;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.book-actions button:hover {
+  background: #222;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+  h1 {
+    font-size: 1.3rem;
+    padding: 0.5rem 0 0.3rem 0;
+  }
+  .book-title {
+    font-size: 1rem;
+  }
+}
