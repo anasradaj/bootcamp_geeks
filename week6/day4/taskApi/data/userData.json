@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "firstName": "test",
+    "lastName": "test",
+    "email": "test@test.com",
+    "userName": "admin",
+    "password": "$2b$10$vOYUxK7U.vzzuqwEuwJWz.f/qSJ3KBsLWzDIuRZAR4M.ZeQIfuXTO"
+  },
+  {
+    "firstName": "test",
+    "lastName": "test",
+    "email": "test1@test.com",
+    "userName": "test1",
+    "password": "$2b$10$5g2O8mRdObOrgYZv/MwdxutuNh61gxrmF4Nrh8xlvpvNweFQ42Fc6"
+  }
+]

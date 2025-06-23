@@ -6,6 +6,7 @@ const {readData, writeData} = require('../utils/fileHandler');
 const user = require('../../../day3/daily_challenges/RegistrationLogin/server/models/user');
 
 router.post('/register', async (req, res) => {
+    console.log('REGISTER BODY:', req.body); // Debug log
     const { firstName, lastName, email, userName, password } = req.body;
 
     if (!firstName || !lastName || !email || !userName || !password) {

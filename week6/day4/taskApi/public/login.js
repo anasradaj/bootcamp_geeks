@@ -1,7 +1,12 @@
 // Login form logic
 const form = document.getElementById('login-form');
 const btn = document.getElementById('login-btn');
-const msg = document.getElementById('login-message');
+let msg = document.getElementById('login-message');
+if (!msg) {
+  msg = document.createElement('div');
+  msg.id = 'login-message';
+  form.appendChild(msg);
+}
 const inputs = Array.from(form.querySelectorAll('input'));
 
 function checkInputs() {
@@ -14,7 +19,7 @@ form.onsubmit = async e => {
   btn.disabled = true;
   msg.textContent = '';
   const body = {
-    username: form.username.value.trim(),
+    userName: form.username.value.trim(),
     password: form.password.value
   };
   const res = await fetch('/login', {

@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form action="/login" method="POST">
+    <form id="login-form">
         <h1>Login</h1>
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
-        <button type="submit">Login</button>
+        <button type="submit" id="login-btn">Login</button>
         <p>Don't have an account? <a href="register.html">Register</a></p>
     </form>
-    <script src="js/login.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>
