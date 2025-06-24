@@ -25,7 +25,7 @@ function FormComponent(props) {
         value={data.age}
         onChange={handleChange}
       />
-      <div>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
         <label>
           <input
             type="radio"
@@ -56,7 +56,7 @@ function FormComponent(props) {
           <option value="France">France</option>
         </select>
       </div>
-      <div>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
         <label>
           <input
             type="checkbox"
@@ -66,11 +66,29 @@ function FormComponent(props) {
           />
           Lactose Free
         </label>
+        <label>
+          <input
+            type="checkbox"
+            name="nutsFree"
+            checked={data.nutsFree === 'on'}
+            onChange={handleChange}
+          />
+          Nuts Free
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            name="veganMeal"
+            checked={data.veganMeal === 'on'}
+            onChange={handleChange}
+          />
+          Vegan Meal
+        </label>
       </div>
       <button type="submit">Submit</button>
       <div style={{ marginTop: '1em' }}>
         <strong>Entered Info:</strong>
-        <pre>first name : {data.firstName}</pre><pre>last name : {data.lastName}</pre><pre>age : {data.age}</pre><pre>gender : {data.gender}</pre><pre>destination : {data.destination}</pre><pre>lactose free : {data.lactoseFree}</pre>
+        <pre>first name : {data.firstName}</pre><pre>last name : {data.lastName}</pre><pre>age : {data.age}</pre><pre>gender : {data.gender}</pre><pre>destination : {data.destination}</pre><pre>lactose free : {data.lactoseFree}</pre><pre>nuts free : {data.nutsFree}</pre><pre>vegan meal : {data.veganMeal}</pre>
       </div>
     </form>
   );

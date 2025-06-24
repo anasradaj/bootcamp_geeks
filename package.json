@@ -1,9 +1,12 @@
 {
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "client": "^0.0.1",
+    "cors": "^2.8.5",
     "express-session": "^1.18.1",
     "faker": "^5.5.3",
     "node-fetch": "^2.7.0",
-    "prompt-sync": "^4.2.0"
+    "prompt-sync": "^4.2.0",
+    "vite": "^7.0.0"
   }
 }

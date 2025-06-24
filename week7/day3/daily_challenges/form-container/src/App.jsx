@@ -8,8 +8,7 @@ function App() {
     lastName: '',
     age: '',
     gender: '',
-    destination: '',
-    lactoseFree: ''
+    destination: ''
   });
 
   const handleChange = (e) => {
