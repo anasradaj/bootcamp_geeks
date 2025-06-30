@@ -19,14 +19,14 @@ function TaskInput({ selectedDay, addTask, currentAccentColor }) {
         type="text"
         value={taskText}
         onChange={(e) => setTaskText(e.target.value)}
-        placeholder={`Ajouter une tâche pour le ${selectedDay}...`}
+        placeholder={`Add a task for ${selectedDay}...`}
         style={{ flexGrow: 1, padding: '10px', border: `1px solid ${currentAccentColor}`, borderRadius: '4px 0 0 4px', transition: 'border-color 0.5s ease' }}
       />
       <button
         type="submit"
         style={{ padding: '10px 15px', backgroundColor: currentAccentColor, color: 'white', border: 'none', borderRadius: '0 4px 4px 0', cursor: 'pointer', transition: 'background-color 0.5s ease' }}
       >
-        Ajouter
+        Add
       </button>
     </form>
   );

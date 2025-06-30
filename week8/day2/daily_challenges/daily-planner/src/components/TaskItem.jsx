@@ -26,7 +26,7 @@ function TaskItem({ todo, selectedDay, editTask, deleteTask, toggleTask }) {
   };
 
   const handleDeleteClick = () => {
-    if (window.confirm('Êtes-vous sûr de vouloir supprimer cette tâche ?')) {
+    if (window.confirm('Are you sure you want to delete this task?')) {
       deleteTask(selectedDay, todo.id);
     }
   };

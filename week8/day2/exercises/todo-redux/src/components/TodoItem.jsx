@@ -22,7 +22,7 @@ function TodoItem({ todo, toggleTodo, removeTodo }) {
         onClick={() => removeTodo(todo.id)}
         style={{ padding: '5px 10px', backgroundColor: '#dc3545', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
       >
-        Supprimer
+        Delete
       </button>
     </li>
   );

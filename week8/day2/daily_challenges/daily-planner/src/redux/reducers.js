@@ -76,7 +76,7 @@ function plannerReducer(state = initialState, action) {
         },
       };
     }
-    case SET_ACCENT_COLOR: // <-- Nouvelle action
+    case SET_ACCENT_COLOR:
       return {
         ...state,
         currentAccentColor: action.payload.color,
