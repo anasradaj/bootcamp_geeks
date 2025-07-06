@@ -1,4 +1,3 @@
-// src/components/UserData.jsx
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUserById, resetUserData } from '../features/users/usersSlice';
