@@ -29,5 +29,7 @@
             "name": "DVD_rental_connection ",
             "password": "Anas/1996."
         }
-    ]
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": []
 }
