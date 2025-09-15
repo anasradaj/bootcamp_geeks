@@ -10,7 +10,6 @@ function handleData(data) {
                 return "Order ".concat(item.orderId, " has a total of $").concat(item.amount, ".");
             // 3. unexpected cases handling
             default:
-                // If 'item' is of an unknown type, handle it here
                 var unhandledItem = item;
                 return "Unhandled data type: ".concat(unhandledItem);
         }

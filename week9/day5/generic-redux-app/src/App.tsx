@@ -44,7 +44,6 @@ function App() {
         <div className="modal-overlay" onClick={() => setSelectedRecipe(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>{selectedRecipe.title}</h2>
-            {/* Le résumé de Spoonacular contient du HTML, on doit l'afficher comme ça */}
             <p dangerouslySetInnerHTML={{ __html: selectedRecipe.summary }}></p>
             <button onClick={() => setSelectedRecipe(null)}>Close</button>
           </div>

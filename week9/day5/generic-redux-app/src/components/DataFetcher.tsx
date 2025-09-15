@@ -1,7 +1,6 @@
-// src/components/DataFetcher.tsx
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import type { AppDispatch, RootState } from '../store'; // <-- La correction est ici
+import type { AppDispatch, RootState } from '../store'; 
 import { fetchData } from '../features/dataSlice';
 
 interface DataFetcherProps<T> {

@@ -1,4 +1,3 @@
-// src/api/api.ts
 import axios from 'axios';
 import type { Recipe } from '../types/types';
 
@@ -10,7 +9,7 @@ export const fetchRecipesAPI = async (searchTerm: string): Promise<Recipe[]> => 
     params: {
       query: searchTerm,
       apiKey: API_KEY,
-      addRecipeInformation: true, // <-- Ajoute cette ligne
+      addRecipeInformation: true,
     }
   });
   return response.data.results || [];

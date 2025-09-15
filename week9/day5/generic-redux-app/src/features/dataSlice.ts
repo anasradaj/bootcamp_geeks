@@ -1,7 +1,6 @@
-// src/features/dataSlice.ts
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit'; // <-- Correction ici
-import type { DataState, Recipe } from '../types/types'; // <-- Bonne pratique ici aussi
+import type { PayloadAction } from '@reduxjs/toolkit'; 
+import type { DataState, Recipe } from '../types/types';
 import { fetchRecipesAPI } from '../api/api';
 
 const initialState: DataState = {

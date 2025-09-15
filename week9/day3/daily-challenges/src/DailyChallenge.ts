@@ -35,7 +35,6 @@ function handleData(data: DataItem[]): string[] {
 
       // 3. unexpected cases handling
       default:
-        // If 'item' is of an unknown type, handle it here
         const unhandledItem: never = item;
         return `Unhandled data type: ${unhandledItem}`;
     }
